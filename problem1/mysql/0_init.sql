@@ -1,7 +1,7 @@
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `name` varchar(64) DEFAULT '' NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`user_id`)
 );
 
 CREATE TABLE `friend_link` (
