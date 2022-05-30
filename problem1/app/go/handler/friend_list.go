@@ -45,7 +45,10 @@ func createFriendList(rows *sql.Rows) (*FriendList, error) {
 		if err != nil {
 			return nil, err
 		}
-		friend_list = append(friend_list, &friend_data)
+		friend_list = append(friend_list, &UserData{
+			Id: friend_data.Id,
+			Name: friend_data.Name,
+		})
 	}
 	if err := rows.Err(); err != nil {
 		return nil, err
