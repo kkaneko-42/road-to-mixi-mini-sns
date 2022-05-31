@@ -33,8 +33,5 @@ func mappingURL(db *sql.DB, e *echo.Echo) {
 	e.GET("/get_friend_list", handler.HandleFriendListGet(db))
 	e.GET("/get_friend_of_friend_list", handler.HandleFriendOfFriendListGet(db))
 	e.GET("/get_friend_of_friend_list_v2", handler.HandleFriendOfFriendListGetV2(db))
-	e.GET("/get_friend_of_friend_list_paging", func(c echo.Context) error {
-		// FIXME
-		return nil
-	})
+	e.GET("/get_friend_of_friend_list_paging", handler.HandleFriendOfFriendListPagingGet(db))
 }
